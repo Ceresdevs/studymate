@@ -1,0 +1,135 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon [name]="folderIcons[folder]" class="ion-icon-title" style="margin-right: 8px;"></ion-icon>
+      {{ folder }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!--Dashboard Content-->
+  <div *ngIf="folder === 'dashboard'" class="dashboard-cont">
+
+    <div class="dashboard-data-cont">
+      <h4 class="headings"> <ion-icon name="flame"></ion-icon> Study Streak</h4>
+
+      <div class="streak-cont">
+        <div class="">
+          <p class="current-streak"><ion-icon name="calendar" color="light"></ion-icon> Current Streak</p>
+          <p class="streak-days">0 days</p>
+        </div>
+
+        <div>
+          <p class="current-streak"><ion-icon name="star" color="light"></ion-icon> Best Streak</p>
+          <p class="streak-days">0 days</p>
+        </div>
+      </div>
+    </div>
+
+    <ion-card class="ion-padding" when="xs">
+      <ion-card-header>
+        <ion-card-title>Focus Mode</ion-card-title>
+      </ion-card-header>
+
+
+      <ion-item class="ion-padding">
+        <ion-select placeholder="Select one to focus" class="border">
+          <ion-select-option value="General Study">General Study</ion-select-option>
+          <ion-select-option value="Review">Review</ion-select-option>
+          <ion-select-option value="Exam">Exam</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+      <div class="timer-cont ion-padding">
+        <div class="ion-title-icon">
+          <ion-title color="dark">Work Time </ion-title>
+
+          <div class="icon">
+            <ion-icon name="volume-mute-outline" size="large" color="primary"></ion-icon>
+            <ion-icon name="settings-outline" size="large" color="primary"></ion-icon>
+          </div>
+
+        </div>
+
+        <ion-card-content>
+
+          <p class="time">25:00</p>
+          <div class="icon-time">
+            <ion-icon class="ion-icon-play" name="play-outline" size="large" color="success"></ion-icon>
+            <ion-icon class="ion-icon-repeat" name="reload-outline" size="large"></ion-icon>
+          </div>
+
+          <p>Session 1 of 4</p>
+        </ion-card-content>
+
+      </div>
+    </ion-card>
+  </div>
+
+  <!--task Content Start-->
+  <div *ngIf="folder === 'task'" >
+    <ion-button class="ion-float-end">+ New task</ion-button> <br> <br> <br>
+
+      <div class="subject-input-cont">
+        <ion-input label="Enter topic" class="ion-input-c" label-placement="floating" fill="outline" placeholder="Enter task"></ion-input>
+
+        <p>05-7-2025</p>
+        
+
+
+      </div>  
+
+
+  </div>
+  <!--task Content End-->
+
+<!--Analytics content Start-->
+  <div *ngIf="folder === 'analytics'" class="dashboard-cont">
+
+    <div class="dashboard-data-cont">
+      <h4 class="headings"> <ion-icon name="flame"></ion-icon> Study Streak</h4>
+
+      <div class="streak-cont">
+        <div>
+          <p class="current-streak"><ion-icon name="calendar"></ion-icon> Current Streak</p>
+          <p class="streak-days">0 days</p>
+        </div>
+
+        <div>
+          <p class="current-streak"><ion-icon name="star"></ion-icon> Best Streak</p>
+          <p class="streak-days">0 days</p>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+<!--Analytics content End-->
+
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--
+  <div id="container">
+    <strong class="capitalize">{{ folder }}</strong>
+
+
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
+        Components</a></p>
+  </div>
+-->
+</ion-content>
