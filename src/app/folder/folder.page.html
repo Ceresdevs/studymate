@@ -73,22 +73,77 @@
   </div>
 
   <!--task Content Start-->
-  <div *ngIf="folder === 'task'" >
-    <ion-button class="ion-float-end">+ New task</ion-button> <br> <br> <br>
+  <div *ngIf="folder === 'task'" class="task-cont" >
+      <ion-button id="open-modal"  size="small" class="ion-padding ion-button-c ion-float-end" [strong]="true">+ New Task</ion-button>
+      <ion-modal trigger="open-modal">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button>Cancel</ion-button>
 
-      <div class="subject-input-cont">
-        <ion-input label="Enter topic" class="ion-input-c" label-placement="floating" fill="outline" placeholder="Enter task"></ion-input>
+              </ion-buttons>
+              <ion-title></ion-title>
+              <ion-buttons slot="end">
+                <ion-button  [strong]="true">Confirm</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-item>
+              <ion-input
+                label="Enter new task"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Your task"
+          
+              ></ion-input>
+            </ion-item>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
 
-        <p>05-7-2025</p>
-        
 
+    <ion-grid  class="ionic-padding-c">
+      <ion-row>
+        <ion-col  class="title-task">Project E4</ion-col>
+        <ion-col size="auto">
+          <div class="date-task" style="width: 100px">05-09-2025</div>
+        </ion-col>
+        <ion-col size="auto">
+          <div style="width: 100px">Priority</div>
+        </ion-col>
+        <ion-col size="auto">
+          <div style="width: 40px"><ion-icon name="create-outline" color="primary" style="cursor: pointer;"></ion-icon></div>
+        </ion-col>
+        <ion-col size="auto">
+          <div style="width: 40px"><ion-icon name="trash-outline" color="danger" style="cursor: pointer;"></ion-icon></div>
+        </ion-col>
+      </ion-row>
 
-      </div>  
+      <ion-row>
+        <ion-col class="title-task">Wireframe</ion-col>
+        <ion-col size="auto">
+          <div class="date-task" style="width: 100px">05-08-2025</div>
+        </ion-col>
+        <ion-col size="auto">
+          <div style="width: 100px">Priority</div>
+        </ion-col>
+        <ion-col size="auto">
+          <div  style="width: 40px"><ion-icon name="create-outline" color="primary" style="cursor: pointer;"></ion-icon></div>
+        </ion-col>
+        <ion-col size="auto">
+          <div style="width: 40px"><ion-icon name="trash-outline" color="danger" style="cursor: pointer;"></ion-icon></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
 
   </div>
   <!--task Content End-->
 
+
+  
 <!--Analytics content Start-->
   <div *ngIf="folder === 'analytics'" class="dashboard-cont">
 

@@ -144,17 +144,33 @@ ion-card-content {
   //dashboard end
 
   //task start 
-  .task-cont {
-    
 
-
- .subject-input-cont {
-  display: flex;
-    width: 80%;
-    border: 1px  solid #e8e0e0;
-    background-color: green;
+  ion-row {
+    border: 1px solid #e8e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
   }
-}
+
+  .date-task {
+    color: #a29d9d;
+  }
+
+  .task-cont {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+
+  }
+
+  .ion-button-c {
+    width: 200px;
+    float: inline-end;
+  }
+
+  .ionic-padding-c {
+    width: 90%;
+  }
 
 
 //tablet
@@ -173,15 +189,49 @@ ion-card-content {
     width: 90%;
   } 
 
+  ion-icon[name="create-outline"], [name="trash-outline"]{
+    display: none;
+  }
+
+  ion-title {
+    display: none;
+  }
+
+
+
 }
 
 //Phone
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) and (min-width: 300px)  {
   .dashboard-data-cont {
     width: 100%;
   }
 
   ion-card {
+    width: 100%;
+  }
+
+  ion-row {
+    padding: 5px;
+  }
+
+  ion-icon[name="create-outline"], [name="trash-outline"]{
+    display: none;
+  }
+
+  .title-task {
+    width: 90%;
+  }
+
+  ion-title {
+    display: none;
+  }
+
+  .ionic-padding-c {
+    width: 98%;
+  }
+
+  .ion-button-c {
     width: 100%;
   }
 

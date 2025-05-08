@@ -14,7 +14,7 @@ export class FolderPage implements OnInit {
   public folderIcons: { [key: string]: string } = {
     dashboard: 'grid',
     task: 'reader',
-    subjects: 'book',
+    subject: 'book',
     analytics: 'bar-chart',
     ai: 'sparkles',
     profile: 'person',
